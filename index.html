@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            global (visible everywhere) variables and
+            local (visible in a block of their declaration) variables
+        
+            local variable of the same name as global one will mask it
+        */
+
+        let a = 12; // global variable
+        let c = 14; // global variable
+        if (true) {
+            console.log("a", a); // global variable is visible in the block (everywhere)
+            let b = 13;
+            console.log("b", b); // local variable is visible in the block (locally)
+            let c = 15;
+            console.log("c", c); //local variable overwrites locally the global one of the same name
+        }
+        console.log("c", c);
+        console.log("a", a) // global variable is visible everywhere (globally)
+        //console.log("b", b); // local variable is not visible outside the block (globally)
+    </script>
+</body>
+</html>
